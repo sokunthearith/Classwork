@@ -1,0 +1,26 @@
+<f:layout name="Default" />
+
+<f:section name="Title">New post</f:section>
+
+<f:section name="Content">
+	<p>Just fill out the following form to create a new post:</p>
+
+	<f:form action="create" objectName="newPost">
+		<ol>
+			<li>
+				<label for="title">Title</label>
+				<f:form.textfield property="title" id="title" />
+			</li>
+			<li>
+				<label for="content">Content</label>
+				<f:form.textfield property="content" id="content" />
+			</li>
+			<li>
+				<f:form.select property="categories" optionLabelField="title" options="{listCategory}" size="3" prependOptionLabel="- select one -" multiple="true"/>
+			</li>
+			<li>
+				<f:form.submit value="Create" />
+			</li>
+		</ol>
+	</f:form>
+</f:section>

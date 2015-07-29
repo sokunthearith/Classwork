@@ -1,0 +1,21 @@
+<f:layout name="Default" />
+
+<f:section name="Title">Edit post "{post.title}"</f:section>
+
+<f:section name="Content">
+	<f:form action="update" object="{post}" objectName="post">
+		<ol>
+			<li>
+				<label for="title">Title</label>
+				<f:form.textfield property="title" id="title" />
+			</li>
+			<li>
+				<label for="content">Content</label>
+				<f:form.textfield property="content" id="content" />
+			</li>
+			<li>
+				<f:form.submit value="Update" />
+			</li>
+		</ol>
+	</f:form>
+</f:section>

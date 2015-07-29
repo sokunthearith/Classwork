@@ -1,0 +1,17 @@
+<f:layout name="Default" />
+
+<f:section name="Title">Show post"{post.title}"</f:section>
+
+<f:section name="Content">
+	<table>
+		<tr>
+			<th>Title:</th>
+			<td>{post.title}</td>
+		</tr>
+		<tr>
+			<th>Content:</th>
+			<td>{post.content}</td>
+		</tr>
+	</table>
+	<f:link.action action="index">Back</f:link.action>
+</f:section>

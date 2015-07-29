@@ -1,0 +1,25 @@
+-
+  name: 'Home Page'
+  uriPattern: ''
+  defaults:
+    '@package': 'WE.Classwork'
+    '@controller': 'Post'
+    '@action': 'index'
+    '@format': 'html'
+
+-
+  name: 'post'
+  uriPattern: '{@controller}/{@action}'
+  defaults:
+    '@package': 'WE.Classwork'
+    '@controller': 'Post'
+    '@format': 'html'
+    appendExceedingArguments: TRUE
+
+-
+  name: 'category'
+  uriPattern: '{@controller}/{@action}'
+  defaults:
+    '@package': 'WE.Classwork'
+    '@controller': 'Category'
+    '@format': 'html'
