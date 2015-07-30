@@ -38,6 +38,13 @@ class Post {
 	}
 
 	/**
+	 * @var \Doctrine\Common\Collections\Collection<\WE\Classwork\Domain\Model\Author> $authors
+	 * @ORM\ManyToMany(inversedBy="posts")
+	 */
+	protected $authors;
+
+
+	/**
 	 * @param string $content
 	 */
 	public function setContent($content)
@@ -75,6 +82,22 @@ class Post {
 	public function setCategories($categories)
 	{
 		$this->categories = $categories;
+	}
+
+	/**
+	 * @return \Doctrine\Common\Collections\Collection
+	 */
+	public function getAuthors()
+	{
+		return $this->authors;
+	}
+
+	/**
+	 * @param \Doctrine\Common\Collections\Collection $authors
+	 */
+	public function setAuthors($authors)
+	{
+		$this->authors = $authors;
 	}
 
 

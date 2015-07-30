@@ -25,6 +25,12 @@ class PostController extends ActionController {
     protected $categoryRepository;
 
     /**
+     * @Flow\Inject
+     * @var \WE\Classwork\Domain\Repository\AuthorRepository
+     */
+    protected $authorRepository;
+
+    /**
      * @return void
      */
     public function indexAction() {
@@ -45,6 +51,7 @@ class PostController extends ActionController {
     public function newAction() {
         $this->view->assign('listCategory', $this->categoryRepository->findAll());
         //$this->view->assign('identity'), $this->questionRepository->findByIdentifier();
+        $this->view->assign('listAuthor', $this->authorRepository->findAll());
     }
 
     /**
@@ -52,7 +59,8 @@ class PostController extends ActionController {
      * @return void
      */
     public function createAction(Post $newPost) {
-
+//        \TYPO3\Flow\var_dump($newPost);
+//        die();
         $this->postRepository->add($newPost);
         $this->addFlashMessage('Created a new post.');
         $this->redirect('index');

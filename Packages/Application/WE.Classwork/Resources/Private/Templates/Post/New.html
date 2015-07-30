@@ -16,7 +16,17 @@
 				<f:form.textfield property="content" id="content" />
 			</li>
 			<li>
-				<f:form.select property="categories" optionLabelField="title" options="{listCategory}" size="3" prependOptionLabel="- select one -" multiple="true"/>
+				<!--<f:form.select property="categories" optionLabelField="title" options="{listCategory}" size="3" prependOptionLabel="- select one -" multiple="true"/>-->
+				<f:for each="{listCategory}" as="categories">
+					<label>{categories.title}</label>
+					<f:form.checkbox property="categories" value="{categories.identity}" multiple="true" />
+				</f:for>
+			</li>
+			<li>
+				<f:for each="{listAuthor}" as="authors">
+					<label>{authors.name}</label>
+					<f:form.checkbox property="authors" value="{authors.identity}" multiple="true"/>
+				</f:for>
 			</li>
 			<li>
 				<f:form.submit value="Create" />

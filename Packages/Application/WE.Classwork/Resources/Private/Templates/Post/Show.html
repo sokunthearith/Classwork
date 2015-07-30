@@ -12,6 +12,22 @@
 			<th>Content:</th>
 			<td>{post.content}</td>
 		</tr>
+		<tr>
+			<th>Category:</th>
+			<td>
+				<f:for each="{post.categories}" as="category" >
+					{category.title}
+				</f:for>
+			</td>
+		</tr>
+		<tr>
+			<th>Author:</th>
+			<td>
+				<f:for each="{post.authors}" as="author" >
+					{author.name}
+				</f:for>
+			</td>
+		</tr>
 	</table>
 	<f:link.action action="index">Back</f:link.action>
 </f:section>
