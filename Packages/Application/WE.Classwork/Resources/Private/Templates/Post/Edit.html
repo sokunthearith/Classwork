@@ -1,6 +1,7 @@
+{namespace te=WE\Classwork\ViewHelpers}
 <f:layout name="Default" />
 
-<f:section name="Title">Edit post "{post.title}"</f:section>
+<f:section name="Title">Edit "{post.title}"</f:section>
 
 <f:section name="Content">
 	<f:form action="update" object="{post}" objectName="post">
@@ -12,6 +13,14 @@
 			<li>
 				<label for="content">Content</label>
 				<f:form.textfield property="content" id="content" />
+			</li>
+			<!--<label for="category">Category</label>-->
+			<li>
+
+					<f:for each="{listCategory}" as="category">
+						{category.title} <f:form.checkbox property="categories" id="category" value="{category.identity}" checked="<te:checkCategoryInPost post='{post}' category='{category}'/>" multiple="true" />
+					</f:for>
+
 			</li>
 			<li>
 				<f:form.submit value="Update" />

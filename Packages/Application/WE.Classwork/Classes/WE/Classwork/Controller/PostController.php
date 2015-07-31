@@ -50,7 +50,6 @@ class PostController extends ActionController {
      */
     public function newAction() {
         $this->view->assign('listCategory', $this->categoryRepository->findAll());
-        //$this->view->assign('identity'), $this->questionRepository->findByIdentifier();
         $this->view->assign('listAuthor', $this->authorRepository->findAll());
     }
 
@@ -73,6 +72,10 @@ class PostController extends ActionController {
      */
     public function editAction(Post $post) {
         $this->view->assign('post', $post);
+        $this->view->assign('listCategory', $this->categoryRepository->findAll());
+        $this->view->assign('listAuthor', $this->authorRepository->findAll());
+
+
     }
 
     /**
